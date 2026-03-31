@@ -1,6 +1,6 @@
 # CS5800 Final Project: Ad Placement & Budget Allocation
 
-This repository currently contains **Part 1 (Qingyang Liu)** of the project:
+This repository documents **Part 1 (Qingyang Liu)** of the project:
 
 - Fractional knapsack with a **Greedy** algorithm
 - 0/1 knapsack with **Dynamic Programming (DP)**
@@ -123,7 +123,7 @@ Let \(n\) be the number of ad slots and \(B\) be the budget (in whole dollars, s
 - **0/1 DP (`dp.dp_01_knapsack`)**: time \(O(nB)\), space \(O(nB)\) for the DP table (plus \(O(n)\) for traceback).
 - **0/1 greedy baseline (`dp.greedy_01_no_fraction`)**: time \(O(n \log n)\), space \(O(n)\).
 
-## Function Map (Part 1)
+## Key Functions Used in Part 1
 
 - Sorting by ratio: `greedy.merge_sort_by_ratio`
 - Fractional single-platform allocation: `greedy.greedy_fractional`
