@@ -89,18 +89,15 @@ Core functions:
 
 ### 4) Test coverage (`tests.py`)
 
-Runs 8 scenarios:
+One command (`python3 tests.py`) runs checks grouped by area:
 
-1. Normal case
-2. Adversarial case (greedy fails)
-3. Exact budget fit
-4. Single slot fits
-5. Single slot too expensive
-6. Empty slot list
-7. Zero budget
-8. All same ratio
+- **`make_slot`** — slot dict and `ratio` field
+- **`merge_sort_by_ratio`** — descending order by reach/cost
+- **`greedy_fractional`** — fractional knapsack (including `data.py` single- and multi-platform lists)
+- **`greedy_01_no_fraction` vs `dp_01_knapsack`** — same edge cases as before (normal, adversarial, exact fit, single slot, empty, zero budget, equal ratios)
+- **Invariants** — on adversarial data, DP beats 0/1 greedy; fractional reach is at least DP reach on that example
 
-Current status: all tests pass.
+Current status: all checks pass.
 
 ## How to Run
 
