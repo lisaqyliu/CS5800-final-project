@@ -169,6 +169,7 @@ To run the multi-platform allocation demo (Part 2):
 
 ```bash
 python3 heap_multi.py
+```
 
 ### Example
 
