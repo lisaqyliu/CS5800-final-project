@@ -169,3 +169,19 @@ To run the multi-platform allocation demo (Part 2):
 
 ```bash
 python3 heap_multi.py
+
+### Example
+
+Suppose we have the following ad slots across platforms:
+
+- Google: Search ad (ratio = 40)
+- TikTok: TopView ad (ratio = 37.5)
+- Meta: Branded effect (ratio = 33.3)
+
+With a fixed budget, the algorithm will:
+
+1. First select the Search ad (highest ratio)
+2. Then select the TopView ad
+3. Continue selecting the next best option that fits the remaining budget
+
+This demonstrates how the max-heap always ensures we pick the globally optimal next step.
