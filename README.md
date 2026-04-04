@@ -1,13 +1,15 @@
 # CS5800 Final Project: Ad Placement & Budget Allocation
 
-This repository documents **Part 1 (Qingyang Liu)** of the project:
+This repository documents **Part 1 (Qingyang Liu)** and **Part 2 (Siyang Li)** of the project:
 
 - Fractional knapsack with a **Greedy** algorithm
 - 0/1 knapsack with **Dynamic Programming (DP)**
+- Multi-platform allocation using a **Max-Heap (priority queue)**
 - Side-by-side comparison showing where greedy fails for 0/1
 - Synthetic datasets and test cases
 
-This README summarizes the completed **Part 1** implementation and current project status.
+This README summarizes the completed implementation and current project status.
+
 
 ## What Part 1 Includes
 
@@ -133,3 +135,37 @@ Let \(n\) be the number of ad slots and \(B\) be the budget (in whole dollars, s
 - Slot dictionaries are assumed to contain precomputed `ratio`.
 - Existing algorithms expect `cost` and `reach` to be numeric and budgets to be integer dollar units.
 - If adding new datasets, use `make_slot(...)` to keep field format consistent.
+
+---
+
+## Part 2 (Siyang Li): Multi-platform Allocation
+
+This part extends the problem from a single platform to a multi-platform setting (e.g., Google, Meta, TikTok) with a shared global budget.
+
+### Approach
+
+We use a max-heap (priority queue) to always select the ad slot with the highest reach-per-dollar ratio across all platforms.
+
+At each step:
+- Select the highest ratio slot
+- If it fits within the remaining budget, purchase it
+- Otherwise, skip it
+- Continue until the budget is exhausted
+
+### Key Idea
+
+Instead of optimizing each platform independently, we treat all ad slots as a unified pool and perform global greedy selection.
+
+### Implementation
+
+- File: `heap_multi.py`
+- Core method: max-heap based greedy selection
+- Input: `multi_platform_slots`, `MULTI_BUDGET`
+- Output: selected slots, total reach, total spend, and platform breakdown
+
+### Usage
+
+To run the multi-platform allocation demo (Part 2):
+
+```bash
+python3 heap_multi.py
